@@ -270,12 +270,77 @@ h4 {
     margin-top: 80px;
 }
 
-.portfolio {}
-
 .portfolio-section .nav .btn {
     background-color: transparent;
     width: 100%;
     box-shadow: none;
+}
+
+.portfolio {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.portfolio img {
+    width: 355px;
+    height: 260px;
+    object-fit: cover;
+}
+
+.portfolio::before {
+    content: "";
+    /* background-color: rgb(21, 164, 250, 0); */
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    bottom: 0;
+    left: 0;
+    transition: 0.4s;
+}
+
+.portfolio:hover::before {
+    content: "";
+    background-color: rgb(180 223 229 / 90%);
+    /* width: 100%; */
+    height: 100%;
+}
+
+.portfolio .portfolio-item {
+    position: absolute;
+    bottom: 45%;
+    right: 50%;
+    transform: translate(50%, 45%);
+    opacity: 0;
+    transition: 0.5s;
+    width: 85%;
+}
+
+.portfolio:hover .portfolio-item {
+    bottom: 50%;
+    right: 50%;
+    transform: translate(50%, 50%);
+    opacity: 1;
+}
+
+.portfolio-item h4 {
+    color: #fafafa;
+}
+
+.portfolio-item a {
+    font-size: 1.2em;
+    color: #fafafa;
+    /* color: #f4976c; */
+    /* color: #303c6c; */
+    border: 1px solid #fafafa;
+    /* border: 1px solid #f4976c; */
+    /* border: 1px solid #303c6c;*/
+    border-radius: 5px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    display: block;
+    margin: 0px 5px;
 }
 
 .about-section {
