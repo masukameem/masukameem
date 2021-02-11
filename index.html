@@ -9,6 +9,7 @@
     <link rel="apple-touch-icon" href="./images/favicon-32x32.png" />
     <!-- Slick Slider CSS -->
     <link rel="stylesheet" type="text/css" href="css/slick.css">
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Sacramento&display=swap"
@@ -112,7 +113,7 @@
                 </div>
                 <div class="col-md col-sm-11 col-12 mb-4">
                     <div class="service">
-                        <span class="service-icon"><i class="fab fa-wordpress"></i></span>
+                        <span class="service-icon"><i class="fab fa-wordpress-simple"></i></span>
                         <h4>WordPress Customization</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sed a nesciunt earum</p>
                     </div>
@@ -205,11 +206,12 @@
                     <div class="portfolio">
                         <img src="images/gallery5.png" class="img-fluid portfolio-img">
                         <div class="portfolio-item">
-                            <h4>Hotel Reservation System</h4>
+                            <h4>Hotel Reservation system</h4>
                             <ul class="nav justify-content-center">
                                 <li><a href="images/gallery5.png" data-lightbox="gallery"><i
                                             class="fas fa-search-plus"></i></a></li>
-                                <li><a href="https://gitlab.com/Mashuka_Meem/hotelreservationsystemold"><i class="fas fa-link"></i></a></li>
+                                <li><a href="https://gitlab.com/Mashuka_Meem/hotelreservationsystemold"><i
+                                            class="fas fa-link"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -267,7 +269,7 @@
     </section>
     <!-- About Section Ends -->
     <!-- Skill Section Starts -->
-    <section class="skill-section bg-color d-none" id="skills">
+    <section class="skill-section bg-color" id="skills">
         <div class="container">
             <div class="row">
                 <div class="col-md">
@@ -278,30 +280,27 @@
                 </div>
             </div>
             <div class="row">
-                <div class="slickslider">
-                    <div>
-                        <img src="images/html5-brands.svg" class="img-fluid">
+                <div class="skills-slider">
+                    <div class="skill">
+                        <span style="color: #dd4b25;"><i class="fab fa-html5"></i></span>
                     </div>
-                    <div>
-                        <img src="images/css3-alt-brands.svg" class="img-fluid">
+                    <div class="skill">
+                        <span style="color: #264de4;"><i class="fab fa-css3-alt"></i></span>
                     </div>
-                    <div>
-                        <img src="images//sass-brands.svg" class="img-fluid">
+                    <div class="skill">
+                        <span style="color: #7d12f9;"><i class="fab fa-bootstrap"></i></span>
                     </div>
-                    <div>
-                        <img src="images/bootstrap-brands.svg" class="img-fluid">
+                    <div class="skill">
+                        <span style="color: #cf649a;"><i class="fab fa-sass"></i></span>
                     </div>
-                    <div>
-                        <img src="images/vuejs-brands.svg" class="img-fluid">
+                    <div class="skill">
+                        <span style="color: #41b783;"><i class="fab fa-vuejs"></i></span>
                     </div>
-                    <div>
-                        <img src="images/wordpress-brands.svg" class="img-fluid">
+                    <div class="skill">
+                        <span style="color: #0073aa;"><i class="fab fa-wordpress-simple"></i></span>
                     </div>
-                    <div>
-                        <img src="images/shopify-brands.svg" class="img-fluid">
-                    </div>
-                    <div>
-                        <img src="images/mailchimp-brands.svg" class="img-fluid">
+                    <div class="skill">
+                        <span style="color: #95bf47;"><i class="fab fa-shopify"></i></span>
                     </div>
                 </div>
             </div>
@@ -336,7 +335,10 @@
                         <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
                         <li><a href=""><i class="fab fa-github"></i></a></li>
                     </ul>
-                    <small>Copyright &copy; 2021</small>
+                    <small>Copyright &copy; Masuka Meem, 2021.
+                        <a href='https://www.freepik.com/vectors/business'>Business vector created by pch.vector -
+                            www.freepik.com</a>
+                    </small>
                 </div>
             </div>
         </div>
@@ -363,41 +365,62 @@
 
     <script>
         $(function () {
+            // nav icon
             $('#toggle').click(function () {
                 $(this).toggleClass('active');
-                // $('.navbar-nav').toggleClass('active');
-                // $('#overlay').toggleClass('open');
             });
+
+            // navbar scroll
             $(document).scroll(function () {
                 var $nav = $(".navbar");
                 $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
             });
 
-            $('.slickslider').slick({
-                dots: true,
-                centerMode: true,
-                centerPadding: '60px',
-                slidesToShow: 3,
+            // slick slider
+            $('.skills-slider').slick({
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
                 responsive: [{
-                        breakpoint: 768,
+                        breakpoint: 992,
                         settings: {
-                            arrows: false,
-                            centerMode: true,
-                            centerPadding: '40px',
-                            slidesToShow: 2
+                            slidesToShow: 3
                         }
                     },
                     {
-                        breakpoint: 480,
+                        breakpoint: 376,
                         settings: {
-                            arrows: false,
-                            centerMode: true,
-                            centerPadding: '40px',
                             slidesToShow: 1
                         }
                     }
                 ]
             });
+            // $('.slickslider').slick({
+            //     dots: true,
+            //     centerMode: true,
+            //     centerPadding: '60px',
+            //     slidesToShow: 3,
+            //     responsive: [{
+            //             breakpoint: 768,
+            //             settings: {
+            //                 arrows: false,
+            //                 centerMode: true,
+            //                 centerPadding: '40px',
+            //                 slidesToShow: 2
+            //             }
+            //         },
+            //         {
+            //             breakpoint: 480,
+            //             settings: {
+            //                 arrows: false,
+            //                 centerMode: true,
+            //                 centerPadding: '40px',
+            //                 slidesToShow: 1
+            //             }
+            //         }
+            //     ]
+            // });
         });
     </script>
 </body>
